@@ -133,13 +133,11 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="Firefox"] $ws1
-assign [class="Google Play Music Desktop Player"] $ws10
-
 
 set $sysmenu "do whatever you want to do"
 bindsym $mod+Delete exec ~/scripts/i3_system_prompt
 
-set $LOCKER "i3lock-color --image=/home/david/Pictures/backgrounds/nasa/moon_1080.png --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --separatorcolor=22222260 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c"
+set $LOCKER "i3lock-color --image=~/Pictures/space.jpg --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --separatorcolor=22222260 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c"
 
 # mode $sysmenu {
 #     bindsym l         exec $LOCKER; mode "default"
@@ -202,25 +200,9 @@ bar {
     }
 }
 
-# get function keys working for my laptop (dell xps 13)
-# to find the obscure key names for function keys use xev
-
-bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 -time 0 -steps 1 && pkill -RTMIN+10 i3blocks
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 -time 0 -steps 1 && pkill -RTMIN+10 i3blocks
-# shortcut to go from 0-100 quickly
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 1 -time 0 -steps 1 && pkill -RTMIN+10 i3blocks
-bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100 -time 0 -steps 1 && pkill -RTMIN+10 i3blocks
-
-bindsym $mod+F5 exec dbus-send --type=method_call  --dest=org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym $mod+F4 exec dbus-send --type=method_call  --dest=org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-bindsym $mod+F6 exec dbus-send --type=method_call  --dest=org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-
 bindsym Print exec ksnapshot
 
-set $BG_IMAGE ~/Pictures/backgrounds/nasa/astronaut_in_space.jpeg
+set $BG_IMAGE ~/Pictures/space.jpg
 
 exec_always feh --bg-fill $BG_IMAGE
 
