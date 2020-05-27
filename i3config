@@ -1,3 +1,7 @@
+# The base of this config is not mine, it is forked from my friend: 
+# https://github.com/emphaticpuma/dotfiles/blob/master/i3config
+# I added and removed things based on my setup.
+
 set $mod Mod1
 
 font pango:Roboto 10
