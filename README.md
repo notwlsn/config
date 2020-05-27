@@ -5,7 +5,7 @@ Not my full setup, slowly adding the bigger files. Free for anyone to use, and s
 I haven't made an install script yet (on the TODO). They're just regular config files, rename and move (i.e. `mv bashrc ~/.bsahrc`)
 
 ### #TODO
-- Slowly add other stuff like i3gaps and full vim (with plugins) configs
+- Slowly add other stuff like i3gaps and full nvim/vim (with plugins) configs
 - Create `install.sh`
 - Update README with list of files
 
