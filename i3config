@@ -1,0 +1,245 @@
+set $mod Mod1
+
+font pango:Roboto 10
+floating_modifier $mod
+
+bindsym $mod+Return exec i3-sensible-terminal
+
+bindsym $mod+Shift+q kill
+
+# start rofi, an alternative to dmenu
+bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec rofi -show window
+
+# common app launcher
+bindsym $mod+c exec ~/scripts/i3_app_launcher
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+z split h
+
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+a focus parent
+
+set $dark #31363b
+set $grey #4d4d4d
+set $darkblue #2c3e50
+
+# Gruvbox colors
+
+set $BLACK  #1d2021
+set $BLACK1 #282828
+set $BLACK2 #504945
+set $BLACK3 #665c54
+set $BLACK4 #7c6f64
+
+set $WHITE  #ebdbb2
+set $WHITE0 #fbf1c7
+set $WHITE1 #ebdbb2
+set $WHITE2 #d5c4a1
+set $WHITE3 #bdae93
+set $WHITE4 #a89984
+
+set $GRAY   #928374
+
+set $RED    #cc241d
+set $GREEN  #98971a
+set $YELLO  #d79921
+set $ORANGE #d65d0e
+set $BLUE   #458588
+set $PURPLE #b16286
+set $MAGEN  #b16286
+set $CYAN   #689d6a
+set $AQUA   #689d6a
+
+set $LIGHT_RED    #fb4934
+set $LIGHT_GREEN  #b8bb26
+set $LIGHT_YELLO  #fabd2f
+set $LIGHT_ORANGE #fe8019
+set $LIGHT_BLUE   #83a598
+set $LIGHT_PURPLE #d3869b
+set $LIGHT_MAGEN  #d3869b
+set $LIGHT_CYAN   #8ec07c
+set $LIGHT_AQUA   #8ec07c
+
+
+hide_edge_borders both
+new_window pixel 0
+
+# Workspace vars and config
+
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+assign [class="Firefox"] $ws1
+assign [class="Google Play Music Desktop Player"] $ws10
+
+
+set $sysmenu "do whatever you want to do"
+bindsym $mod+Delete exec ~/scripts/i3_system_prompt
+
+set $LOCKER "i3lock-color --image=/home/david/Pictures/backgrounds/nasa/moon_1080.png --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --separatorcolor=22222260 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c"
+
+# mode $sysmenu {
+#     bindsym l         exec $LOCKER; mode "default"
+#     bindsym r         restart
+#     bindsym e         exit
+#     bindsym p         exec shutdown -P now
+#     bindsym b         exec shutdown -r now
+#     bindsym k         exec google-chrome
+#     bindsym Return    mode "default"
+#     bindsym Escape    mode "default"
+# }
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bindsym $mod+Ctrl+l exec xdotool key Caps_Lock
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $BLACK1 $BLACK1 $WHITE #2e9ef4   #285577
+client.focused_inactive $BLACK0 $BLACK $WHITE #484e50   #5f676a
+client.unfocused        $BLACK0 $BLACK $WHITE4 #292d2e   #222222
+client.urgent           $RED    $BLACK $WHITE #900000   #900000
+client.placeholder      $BLACK  $BLACK $WHITE #000000   #0c0c0c
+
+# BAR CONFIG
+
+set $window_border #2f343a
+
+bar {
+    status_command i3blocks
+    tray_output none
+    font pango:Roboto 10
+    position top
+    separator_symbol "∫"
+    colors {
+        background $BLACK1
+        statusline $WHITE
+        separator  $BLACK3
+
+        focused_workspace  $BLACK1 $BLACK2 $WHITE
+        inactive_workspace $BLACK1 $BLACK1 $BLACK4
+        urgent_workspace   $BLACK1 $WHITE  $BLACK
+    }
+}
+
+# get function keys working for my laptop (dell xps 13)
+# to find the obscure key names for function keys use xev
+
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 -time 0 -steps 1 && pkill -RTMIN+10 i3blocks
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 -time 0 -steps 1 && pkill -RTMIN+10 i3blocks
+# shortcut to go from 0-100 quickly
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 1 -time 0 -steps 1 && pkill -RTMIN+10 i3blocks
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100 -time 0 -steps 1 && pkill -RTMIN+10 i3blocks
+
+bindsym $mod+F5 exec dbus-send --type=method_call  --dest=org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+F4 exec dbus-send --type=method_call  --dest=org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym $mod+F6 exec dbus-send --type=method_call  --dest=org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+bindsym Print exec ksnapshot
+
+set $BG_IMAGE ~/Pictures/backgrounds/nasa/astronaut_in_space.jpeg
+
+exec_always feh --bg-fill $BG_IMAGE
+
+# Lock screen stuff
+bindsym $mod+b exec $LOCKER
+exec_always xautolock -time 5 -locker $LOCKER -corners ---+"
+
+# keyboard stuff
+exec xmodmap ~/.Xmodmap
+
+# Xresources for rofi and urxvt-unicode
+exec_always xrdb ~/.Xresources
+exec_always --no-startup-id redshift
+
+# hack to get dolphin to display icons
+exec_always export DESKTOP_SESSION="kde"
+
+# Programs to start everytime
+exec compton -b --vsync opengl --inactive-dim 0.0
+
+# vim:filetype=i3
+
