@@ -2,7 +2,7 @@
 Not my full setup, slowly adding the bigger files. Free for anyone to use, and some of these are forked from people who are credited in the file comments
 
 ### Usage
-I haven't made an install script yet (on the TODO). They're just regular config files, rename and move (i.e. `mv bashrc ~/.bsahrc`)
+I haven't made an install script yet (on the TODO). They're just regular config files, rename and move (i.e. `mv bashrc ~/.bashrc`)
 
 ### #TODO
 - Slowly add other stuff like i3gaps and full nvim/vim (with plugins) configs
