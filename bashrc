@@ -72,10 +72,13 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
+# some aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# server aliases (this is bad practice use the ~/.bash_aliases file)
+alias server='python -m SimpleHTTPServer'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -101,17 +104,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export NVM_DIR="/home/david/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 export EDITOR='vim'
 # export PS1='\[\033[01;32m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] [\[$(tput sgr0)\]\[\033[01;34m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]] \T$(__git_ps1) \\$\[$(tput sgr0)\] '
 # (__git_ps1
 export PS1="\u [\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]] λ \[$(tput sgr0)\]"
 
-
-
-alias server='python -m SimpleHTTPServer'
-
 export PATH=$PATH:~/scripts
-
