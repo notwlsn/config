@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# WC 2020
 
 #echo $SHELL
 
