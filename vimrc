@@ -9,6 +9,7 @@ set smarttab
 set nu
 set cursorline
 set nowrap
+set linebreak
 
 set noshowmode
 
