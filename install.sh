@@ -19,7 +19,9 @@ cp ~/.bashrc bashrc_old
 
 echo "Copying new bashrc..."
 cp bashrc ~/.bashrc
-source ~/.bashrc
+
+#Cannot source a bashrc from within a script due to segregated instances of shell.
+#source ~/.bashrc
 
 #vim
 if [ -f ~/.vimrc ];
@@ -34,4 +36,5 @@ cp vimrc ~/.vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c ':PluginInstall' -c 'q' -c ':q'
 
-echo "Done. To restore overwrite current configs with thier *_old counterparts in applicable locations"
+echo "Done. To restore overwrite current configs with thier *_old counterparts in applicable locations."
+echo "Restart or source ~/.bashrc to see changes."
