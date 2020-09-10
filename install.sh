@@ -37,5 +37,18 @@ cp vimrc ~/.vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c ':PluginInstall' -c 'q' -c ':q'
 
+#powerline and powerline-fonts
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+#powerline
+pip install powerline-status
+
 echo "Done. To restore overwrite current configs with thier *_old counterparts in applicable locations."
 echo "Restart or source ~/.bashrc to see changes."
