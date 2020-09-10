@@ -37,7 +37,7 @@ cp vimrc ~/.vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c ':PluginInstall' -c 'q' -c ':q'
 
-#powerline and powerline-fonts
+#powerline-fonts
 # clone
 git clone https://github.com/powerline/fonts.git --depth=1
 # install
