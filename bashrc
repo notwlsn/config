@@ -108,6 +108,6 @@ export EDITOR='vim'
 # export PS1='\[\033[01;32m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] [\[$(tput sgr0)\]\[\033[01;34m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]] \T$(__git_ps1) \\$\[$(tput sgr0)\] '
 # (__git_ps1
 
-export PS1="[\@] \u@\H [eth0: `ifconfig eth0 2>/dev/null | sed -n 2,2p | cut -d" " -f 10`] [\033[38;5;12m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]] > \[$(tput sgr0)\]"
+export PS1="[\@] \u@\H [eth0: `/sbin/ifconfig eth0 2>/dev/null | sed -n 2,2p | cut -d" " -f 10`] [\033[38;5;12m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]] > \[$(tput sgr0)\]"
 
 export PATH=$PATH:~/scripts
