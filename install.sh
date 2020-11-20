@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# WC 2020
+# gwillson.camp@protonmail.ch
 
 #echo $SHELL
 
