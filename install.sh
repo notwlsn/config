@@ -21,9 +21,6 @@ cp ~/.bashrc bashrc_old
 echo "Copying new bashrc..."
 cp bashrc ~/.bashrc
 
-#Cannot source a bashrc from within a script due to segregated instances of shell.
-#source ~/.bashrc
-
 #vim
 if [ -f ~/.vimrc ];
 	then 
@@ -49,6 +46,14 @@ rm -rf fonts
 
 #powerline
 pip install powerline-status
+
+#Xresources
+echo "Creating Xresources configuration file..."
+cp Xresources ~/.Xresources
+
+#xbindkeys
+echo "Creating xbindkeys configuration file..."
+cp xbindkeysrc ~/.xbindkeysrc
 
 echo "Done. To restore overwrite current configs with thier *_old counterparts in applicable locations."
 echo "Restart or source ~/.bashrc to see changes."
