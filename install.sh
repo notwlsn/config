@@ -52,8 +52,14 @@ echo "Creating Xresources configuration file..."
 cp Xresources ~/.Xresources
 
 #xbindkeys
+echo "Installing xbindkeys..."
+sudo apt install xbindkeys
 echo "Creating xbindkeys configuration file..."
 cp xbindkeysrc ~/.xbindkeysrc
+
+#dmenu
+echo "Installing dmenu..."
+sudo apt install dmenu
 
 echo "Done. To restore overwrite current configs with thier *_old counterparts in applicable locations."
 echo "Restart or source ~/.bashrc to see changes."
