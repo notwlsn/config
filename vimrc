@@ -90,6 +90,7 @@ set undolevels=1000
 " general ease of use bindings
 map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 map <F3> :noh
+set pastetoggle=<F4>
 
 let mapleader = "\<Space>"
 
