@@ -3,7 +3,16 @@
 
 #echo $SHELL
 
+#priv check
+if [[ $EUID -ne 0 ]]; then
+	echo "This script must be run as root"
+	exit 1
+fi
+
 #tmux
+echo "Installing tmux..."
+sudo apt install tmux
+
 if [ -f ~/.tmux.conf ];
 	then	
 		echo "tmux.conf exists, backing up to tmux_conf_old"
@@ -60,6 +69,10 @@ cp xbindkeysrc ~/.xbindkeysrc
 #dmenu
 echo "Installing dmenu..."
 sudo apt install dmenu
+
+#screen
+echo "Installing screen..."
+sudo apt install screen
 
 echo "Done. To restore overwrite current configs with thier *_old counterparts in applicable locations."
 echo "Restart or source ~/.bashrc to see changes."
