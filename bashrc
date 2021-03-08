@@ -110,6 +110,6 @@ export EDITOR='vim'
 
 #export PS1="[\@] \u@\H [eth0: `/sbin/ifconfig eth0 2>/dev/null | sed -n 2,2p | cut -d" " -f 10`] [\033[38;5;12m\]\w\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]] > \[$(tput sgr0)\]"
 
-export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] [\[$(tput sgr0)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\]] \T: \[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] [\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\]] \[$(tput bold)\]\T\[$(tput sgr0)\] \\$\[$(tput sgr0)\]"
 
 export PATH=$PATH:~/scripts
