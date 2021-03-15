@@ -15,7 +15,7 @@ set smarttab
 
 set nu
 set cursorline
-set wrap
+set wrap linebreak
 
 " F4 for paste toggling
 set pastetoggle=<F4>
