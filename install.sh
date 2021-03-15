@@ -56,6 +56,12 @@ rm -rf fonts
 #powerline
 pip install powerline-status
 
+#fzf support
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+#This is starting to leave scope here. It's becoming less dotfile focused and more  or less an ansible playbook. And I'm alright with that, but I should probably warn other people or break it off into an environment setup script for new VMs.
+
 #Xresources
 echo "Creating Xresources configuration file..."
 cp Xresources ~/.Xresources
