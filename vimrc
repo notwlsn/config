@@ -94,10 +94,10 @@ set undolevels=1000
 " Global 'map' bindings
 map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 map <F3> :noh
-set pastetoggle=<F4>
-map <F5> :NERDTree<CR>
-map <C-p> :source ~/.vimrc<CR>
-map <C-f> :FZF<CR>
+set pastetoggle=<F4> " Toggle paste
+map <F5> :NERDTree<CR> " Open NerdTree
+map <C-p> :source ~/.vimrc<CR> " Source config
+map <C-f> :FZF<CR> " Finding file within a directory
 
 " C bindings for commenting
 map <C-C> :s:^:\/\/<CR>
