@@ -17,6 +17,39 @@ set nu
 set cursorline
 set wrap linebreak
 
+" backup
+" Save your backups to a less annoying place than the current directory.
+" If you have .vim-backup in the current directory, it'll use that.
+" Otherwise it saves it to ~/.vim/tmp/backup or . if all else fails.
+if isdirectory($HOME . '/.vim/tmp/backup') == 0
+  :silent !mkdir -p ~/.vim/tmp/backup >/dev/null 2>&1
+endif
+set backupdir=./.vim-backup/,~/.vim/tmp/backup/,.
+set backup
+
+" swap
+" Save your swp files to a less annoying place than the current directory.
+" If you have .vim-swap in the current directory, it'll use that.
+" Otherwise it saves it to ~/.vim/tmp/swap, ~/tmp or .
+if isdirectory($HOME . '/.vim/tmp/swap') == 0
+  :silent !mkdir -p ~/.vim/tmp/swap >/dev/null 2>&1
+endif
+set directory=./.vim-swap//,~/.vim/tmp/swap//,~/tmp//,.
+set swapfile
+
+" persistent undo
+if exists('+undofile')
+  " undofile - This allows you to use undos after exiting and restarting
+  " This, like swap and backups, uses .vim-undo first, then ~/.vim/tmp/undo
+  " :help undo-persistence
+  " This is only present in 7.3+
+  if isdirectory($HOME . '/.vim/tmp/undo') == 0
+    :silent !mkdir -p ~/.vim/tmp/undo > /dev/null 2>&1
+  endif
+  set undodir=./.vim-undo//,~/.vim/tmp/undo//
+  set undofile
+endif
+
 " F4 for paste toggling
 set pastetoggle=<F4>
 set visualbell
@@ -114,19 +147,10 @@ nnoremap <leader>; $a;<C-C>
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
-map  <C-w> :tabclose<CR>
+map  <C-q> :tabclose<CR>
 
-" Normal mode bindings
-" Move lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-
-" Insert mode bindings
-" Move lines
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-
-" Visual mode bindings
-" Move lines
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+" Bindings for splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
