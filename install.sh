@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # gwillson.camp@protonmail.ch
 
-#echo $SHELL
+echo "Read this whole script before you run it. I use it for my own purposes, and I use it to install common software on APT compatible distros. Run at your own risk."
 
 #priv check
 if [[ $EUID -ne 0 ]]; then
