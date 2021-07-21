@@ -1,5 +1,5 @@
 # My Dotfiles
-This is not my full setup, I'm slowly adding the bigger files. Free for anyone to use.
+This is not my full setup, I'm slowly adding the bigger files. Free for anyone to use. Questions can be sent to `gwillson.camp@protonmail.ch`.
 
 ## Usage
 
@@ -27,7 +27,7 @@ There are three formats of computer fonts:
 - **Stroke** - Size and shape are defined using metadata specifications which create the font/symbol.
 - **Bitmap** - Pixels are arranged in a literal bitmap (array of binary data which represents pixel values) for a given size. This means they are not scalable and a separate file must be present for each font at a given size.
 
-Here's an example of the Terminus bitmap font on Ubuntu:
+Here's an example of the [Terminus](http://terminus-font.sourceforge.net/) bitmap font on Ubuntu:
 
 ![terminus-ubuntu.png](/bitmap-font.png)
 
@@ -57,3 +57,17 @@ You can convert with:
 ```
 
 Once it's in `.otb` format move it to `/usr/local/share/fonts` and use `dpkg` to reconfigure `fontconfig-config`.
+
+This would look something like:
+
+```
+$ cp new_font.otb /usr/local/share/fonts
+$ dpkg-reconfigure fontconfig-config
+$ dpkg-reconfigure fontconfig
+$ fc-cache -fv
+```
+
+### Terminus via Installer
+There's another way to do this as well. The nice people making Terminus have an installer. You can find it on their page (linked above), or directly from [SourceForge](https://sourceforge.net/projects/terminus-font/files/terminus-font-4.49/terminus-font-4.49.1.tar.gz/download).
+
+Install from source by extracting the tarball and `make` then `make install` in the build directory. This installer should provide accomodating options for differing file formats too.
