@@ -215,7 +215,21 @@ hide_edge_borders both
 
 # i3-workspace-names-daemon
 # https://github.com/cboddy/i3-workspace-names-daemon
+# To set icons see ~/.config/i3/app-icons.json
+# Icon codes can be selected from font-awesome gallery
+# https://origin.fontawesome.com/v5.15/icons?d=gallery&p=2
 exec_always --no-startup-id exec i3-workspace-names-daemon
 
 # Screenshot
 bindsym Print exec mate-screenshot
+
+# Startup applications
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox, workspace 1; exec /usr/bin/uxterm'
+# exec --no-startup-id i3-msg 'workspace 2; exec /usr/local/bin/aerc'
+# exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/okular'
+
+# Scratchpad functionality. Achieves the same effect as an OS minimize window.
+# Make the currently focused window a scratchpad
+bindsym $mod+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+plus scratchpad show

@@ -1,0 +1,19 @@
+{
+    "firefox": "firefox",
+    "chromium-browser": "chrome",
+    "chrome": "chrome",
+    "google-chrome": "chrome",
+    "x-terminal-emulator": "terminal",
+    "uxterm": "terminal",
+    "discord": "discord",
+    "okular": "file-pdf",
+    "FBReader": "book",
+    "vim": "pencil-alt",
+    "aerc": "envelope",
+    "jetbrains-idea-ce": "edit",
+    "nautilus": "folder-open",
+    "clementine": "music",
+    "vlc": "play",
+    "signal": "comment",
+    "_no_match": "question"
+}

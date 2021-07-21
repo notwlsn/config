@@ -22,7 +22,9 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-color|*-256color) 
+        local TITLEBAR='\[\033]0;\u@\h:\w\007\]'     
+        color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -113,3 +115,6 @@ export EDITOR='vim'
 export PS1="\[$(tput bold)\]\[\033[38;5;2m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] [\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\]] \[$(tput bold)\]\T\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
 
 export PATH=$PATH:~/scripts
+
+alias logout-mate="kill -9 -1"
+alias xrdb-reload="xrdb -merge ~/.Xresources"

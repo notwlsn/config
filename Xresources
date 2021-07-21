@@ -1,8 +1,8 @@
 
 
 ! Use a nice truetype font and size by default... 
-xterm*faceName: DejaVu Sans Mono Book
-xterm*faceSize: 11
+xterm*faceName: Terminus
+xterm*faceSize: 14
 
 ! Every shell is a login shell by default (for inclusion of all necessary environment variables)
 xterm*loginshell: true
@@ -54,4 +54,4 @@ xterm*VT100.Translations: #override \
 	Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
 
 ! Adding some Powerline support
-XTerm*faceName: DejaVu Sans Mono for Powerline 
+! XTerm*faceName: DejaVu Sans Mono for Powerline 
