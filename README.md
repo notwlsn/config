@@ -1,5 +1,5 @@
 # My Dotfiles
-Not my full setup, slowly adding the bigger files. Free for anyone to use, and some of these are forked from people who are credited in the file comments
+This is not my full setup, I'm slowly adding the bigger files. Free for anyone to use.
 
 ## Usage
 
