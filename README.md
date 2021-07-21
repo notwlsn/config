@@ -14,6 +14,7 @@ Run `install.sh` and the bash, tmux, and vim config files will be installed, bac
 - Update README with list of files
 - Rewrite installation scripts
 - Create Terraform & Ansible manifest(s)
+- Add README.md section on Bitmap fonts in prepackaged distros
 
 #### What is Brew?
 Homebrew, a Mac package manager, see [here.](https://brew.sh/ "Homebrew website") The `brew/casks` directory here are all of the Brew packages I have installed, and the `brew/leaves` directory are all (some) of the Bash utilities I have installed. Running `dump.sh` will dump the packages you have installed in the same format if you're on a Mac.
