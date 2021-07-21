@@ -1,6 +1,4 @@
-# The base of this config is not mine, it is forked from my friend: 
-# https://github.com/emphaticpuma/dotfiles/blob/master/i3config
-# I added and removed things based on my setup.
+# gwillson.camp@protonmail.ch 2021
 
 set $mod Mod1
 
@@ -223,10 +221,14 @@ exec_always --no-startup-id exec i3-workspace-names-daemon
 # Screenshot
 bindsym Print exec mate-screenshot
 
-# Startup applications
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox, workspace 1; exec /usr/bin/uxterm'
-# exec --no-startup-id i3-msg 'workspace 2; exec /usr/local/bin/aerc'
-# exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/okular'
+# Startup applications. The basic approach using exec.
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/firefox, workspace $ws1; exec /usr/bin/uxterm'
+#exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/local/bin/aerc'
+exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/okular'
+exec --no-startup-id i3-msg 'workspace $ws4; exec /usr/bin/FBReader'
+
+# Different approach to startup applications. More testing needed.
+#exec --no-startup-id ~/.config/i3/init_workspace.sh
 
 # Scratchpad functionality. Achieves the same effect as an OS minimize window.
 # Make the currently focused window a scratchpad
