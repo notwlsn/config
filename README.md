@@ -34,7 +34,7 @@ Here's an example of the Terminus bitmap font on Ubuntu:
 ### I don't care - I just want it
 This will differ by distribution. For now I'm only posting about Ubuntu 20.04, because it's what I use. This should work for any Ubuntu version past 11.10, but perform at your own risk.
 
-Ubuntu disables support for bitmap fonts by default, so you have to manually enable it. Also, fonts have to be in [OTB](https://en.wikipedia.org/wiki/OTA_bitmap) format.
+Ubuntu disables support for bitmap fonts by default, so you have to manually enable it. Also, fonts have to be in [OTB](https://en.wikipedia.org/wiki/OpenType) format.
 
 Enable them by removing `70-no-bitmaps.conf` and re-linking `70-force-bitmaps.conf` in `/etc/fonts/conf.d`. Then reconfigure `fontconfig` with `dpkg`. This will go something like:
 
