@@ -1,6 +1,6 @@
 
 
-! Use a nice truetype font and size by default... 
+! Terminus is a bitmap font. If you want to use a bitmap font in a terminal, some Linux distributions disable them by default (like Ubuntu). You have to enable their use for this to work.
 xterm*faceName: Terminus
 xterm*faceSize: 14
 
@@ -53,5 +53,5 @@ xterm*VT100.Translations: #override \
 	Ctrl Shift <Key>V:    insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY) \n\
 	Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
 
-! Adding some Powerline support
+! Powerline font for if I tire of bitmap fonts
 ! XTerm*faceName: DejaVu Sans Mono for Powerline 
