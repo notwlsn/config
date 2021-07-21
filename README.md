@@ -9,7 +9,7 @@ Don't use the install script right now. I need to figure some things out. It's b
 Run `install.sh` and the bash, tmux, and vim config files will be installed, backing up your old ones to *_old in the working directory.
 
 ### TODO
-~~- Slowly add other stuff like i3gaps and full nvim/vim (with plugins) configs~~
+- ~~Slowly add other stuff like i3gaps and full nvim/vim (with plugins) configs~~
 - ~~Create `install.sh`~~
 - Update README with list of files
 - Rewrite installation scripts
