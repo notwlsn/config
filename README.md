@@ -9,21 +9,26 @@ Don't use the install script right now. I need to figure some things out. It's b
 Run `install.sh` and the bash, tmux, and vim config files will be installed, backing up your old ones to *_old in the working directory.
 
 ## TODO
-~~- Slowly add other stuff like i3gaps and full nvim/vim (with plugins) configs~~
+- ~~Slowly add other stuff like i3gaps and full nvim/vim (with plugins) configs~~
 - ~~Create `install.sh`~~
+- ~~Write about bitmap fonts & using them on Ubuntu~~
 - Update README with list of files
 - Rewrite installation scripts
 - Create Terraform & Ansible manifest(s)
 
+## HomeBrew
 ### What is Brew?
 Homebrew, a Mac package manager, see [here.](https://brew.sh/ "Homebrew website") The `brew/casks` directory here are all of the Brew packages I have installed, and the `brew/leaves` directory are all (some) of the Bash utilities I have installed. Running `dump.sh` will dump the packages you have installed in the same format if you're on a Mac.
 
 ## Bitmap fonts
 ### What are bitmap fonts?
 There are three formats of computer fonts: 
-- Vector - Use [parametric curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) and formulae to outline a symbol, which is then created. This makes them scalable to any size.
-- Stroke - Size and shape are defined using metadata which creates the font/symbol.
-- Bitmap - Pixels are arranged in a literal bitmap (array of binary data which represents pixel values) for a given size. This means they are not scalable and a separate file must be present for a font at a given size.
+- **Vector** - Use [parametric curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) and formulae to outline a symbol, which is then created. This makes them scalable to any size.
+- **Stroke** - Size and shape are defined using metadata which creates the font/symbol.
+- **Bitmap** - Pixels are arranged in a literal bitmap (array of binary data which represents pixel values) for a given size. This means they are not scalable and a separate file must be present for a font at a given size.
+
+Here's an example of the Terminus bitmap font on Ubuntu:
+![terminus-ubuntu.png](/bitmap-font.png)
 
 ### I don't care - I just want it
 This will differ by distribution. For now I'm only posting about Ubuntu 20.04, because it's what I use. This should work for any Ubuntu version past 11.10, but perform at your own risk.
