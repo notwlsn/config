@@ -2,8 +2,22 @@ set encoding=utf-8
 
 syntax on
 
-" show full file path
+" Disable the default Vim startup message.
+set shortmess+=I
+
+" Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
+
+" Show line numbers.
+set number
+
+" This enables relative line numbering mode. With both number and
+" relativenumber enabled, the current line shows the true line number, while
+" all other lines (above and below) are numbered relative to the current line.
+" This is useful because you can tell, at a glance, what count is needed to
+" jump up or down to a particular line, by {count}k to go up or {count}j to go
+" down.
+set relativenumber
 
 " set statusline+=%F
 set statusline=%r%F\ \ \ \ \%=LINE:\ %l/%L/%P\ \ \TIME:\ %{strftime('%c')}
@@ -50,14 +64,31 @@ if exists('+undofile')
   set undofile
 endif
 
-" F4 for paste toggling
-set pastetoggle=<F4>
-set visualbell
+" Disable audio bell.
+set noerrorbells visualbell t_vb=k
 
 set noshowmode
 
+" This setting makes search case-insensitive when all characters in the string
+" being searched are lowercase. However, the search becomes case-sensitive if
+" it contains any capital letters. This makes searching more convenient.
+set ignorecase
+set smartcase
+
+" Enable searching as you type, rather than waiting till you press enter.
+set incsearch
+
+" Disable highlight searching while not in active search.
+:nohls
+
+" The backspace key has slightly unintuitive behavior by default. For example,
+" by default, you can't backspace before the insertion point set with 'i'.
+" This configuration makes backspace behave more reasonably, in that you can
+" backspace over anything.
+set backspace=indent,eol,start
+
 " mouse wheel scrolling support
-set mouse=a
+set mouse+=a
 
 " terminal colors -> 256
 set t_Co=256
@@ -66,11 +97,13 @@ set t_Co=256
 " recurse)
 set tags=tags;/
 
+" If Vim is loaded with ~/.vimrc present, it *should* be in nocompatible mode.
+" Just in case it isn't.
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -86,6 +119,8 @@ Plugin 'Yggdroot/indentLine'
 " Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+" https://github.com/easymotion/vim-easymotion
+Plugin 'easymotion/vim-easymotion'
 
 " NERDTree plugins
 Plugin 'preservim/nerdtree'
@@ -100,14 +135,10 @@ filetype plugin indent on
 " choice list is located at https://github.com/flazz/vim-colorschemes/tree/master/colors
 colorscheme happy_hacking
 
-set noshowmode
-
 let g:vim_markdown_frontmatter = 1
 
 let g:tex_conceal = ""
 
-set incsearch
-set hlsearch
 set smartcase
 
 " spelling settings
@@ -115,22 +146,24 @@ set spelllang=en_us
 
 " set 5 lines padding above and below the cursor even when scrolling
 set scrolloff=5
+
 " set the vertical split character to the same one as tmux
 set fillchars+=vert:│
 
-" set persistent undo
-set undofile
-set undodir=~/.vim/undo
-set undoreload=10000
-set undolevels=1000
+" map <F2> :echo 'Current time is ' . strftime('%c')<CR>
+map <F2> :noh
 
-" Global 'map' bindings
-map <F2> :echo 'Current time is ' . strftime('%c')<CR>
-map <F3> :noh
-set pastetoggle=<F4> " Toggle paste
-map <F5> :NERDTree<CR> " Open NerdTree
-map <C-p> :source ~/.vimrc<CR> " Source config
-map <C-f> :FZF<CR> " Finding file within a directory
+" Toggle paste.
+set pastetoggle=<F4> 
+
+" Open NERDTree interface.
+map <F5> :NERDTree<CR>
+
+" Source config
+map <C-p> :source ~/.vimrc<CR> 
+
+" Fuzzy file searching using FZF.
+map <C-f> :FZF<CR> 
 
 " C bindings for commenting
 map <C-C> :s:^:\/\/<CR>
@@ -138,8 +171,6 @@ map <C-A> :s:^\/\/<CR>
 
 " Leader bindings
 let mapleader = "\<Space>"
-" No highlight
-nnoremap <leader>/ :noh<CR>
 " Append trailing semicolon
 nnoremap <leader>; $a;<C-C>
 
@@ -155,6 +186,13 @@ nnoremap <C-K> <C-W><C-K>
 "nnoremap <C-L> <C-W><C-L>
 "nnoremap <C-H> <C-W><C-H>
 
-" turn hybrid line numbers on
-set number relativenumber
-set nu rnu
+" Never want 'Q' in normal mode entering Ex mode.
+nmap Q <Nop>
+
+" By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
+" shown in any window) that has unsaved changes. This is to prevent you from "
+" forgetting about unsaved changes and then quitting e.g. via `:qa!`. I find
+" hidden buffers helpful enough to disable this protection. See `:help hidden`
+" for more information on this.
+set hidden
+
