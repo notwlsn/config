@@ -1,5 +1,5 @@
 # My Dotfiles
-This is not my full setup, I'm slowly adding the bigger files. Free for anyone to use. Questions can be sent to `gwillson.camp@protonmail.ch`.
+This is not my full setup, I'm slowly adding the bigger files. Free for anyone to use. Questions can be sent to `tsunset@proton.me`.
 
 ## Usage
 
@@ -13,12 +13,15 @@ Run `install.sh` and the bash, tmux, and vim config files will be installed, bac
 - ~~Create `install.sh`~~
 - ~~Write about bitmap fonts & using them on Ubuntu~~
 - Update README with list of files
-- Rewrite installation scripts
+- ~~Rewrite installation scripts~~
 - Create Terraform & Ansible manifest(s)
 
 ## HomeBrew
 ### What is Brew?
 Homebrew, a Mac package manager, see [here.](https://brew.sh/ "Homebrew website") The `brew/casks` directory here are all of the Brew packages I have installed, and the `brew/leaves` directory are all (some) of the Bash utilities I have installed. Running `dump.sh` will dump the packages you have installed in the same format if you're on a Mac.
+
+### Why did you remove brew?
+While I did want to show people the packages that are handy for me in brew, giving someone a package listing of my laptop just feels like awful security practice. I might bring this back at a later time if I can find a better way of doing it.
 
 ## Bitmap fonts
 ### What are bitmap fonts?

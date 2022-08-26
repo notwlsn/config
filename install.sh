@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# whoismydns@protonmail.ch 2020
+# 2020 tsunset@proton.me
 
 # Changelog
 # 08-25-2022: Retiring this script in favor of Ansible playbooks. Installing software via this method was never really meant to be sustainable, just a quick and dirty need of the time. Ansible playbooks for typical build environments of mine may be added at a later date.

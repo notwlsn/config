@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# whoismydns@protonmail.com 2020
+# 2020 tsunset@proton.me
 
 #echo $SHELL
 
