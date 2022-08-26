@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#WC 2020
+# whoismydns@protonmail.com 2020
 
 #echo $SHELL
 

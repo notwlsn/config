@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# gwillson.camp@protonmail.ch
+# whoismydns@protonmail.ch 2020
+
+# Changelog
+# 08-25-2022: Retiring this script in favor of Ansible playbooks. Installing software via this method was never really meant to be sustainable, just a quick and dirty need of the time. Ansible playbooks for typical build environments of mine may be added at a later date.
 
 echo "Read this whole script before you run it. I use it for my own purposes, and I use it to install common software on APT compatible distros. Run at your own risk."
 
