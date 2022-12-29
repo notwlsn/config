@@ -3,10 +3,7 @@ This is not my full setup, I'm slowly adding the bigger files. Free for anyone t
 
 ## Usage
 
-**Disclaimer**:
-Don't use the install script right now. I need to figure some things out. It's become less of a dotfile install and more of an Ansible playbook, and frankly I need to separate responsbilities between the two and rewrite them. For now, don't use it.
-
-Run `install.sh` and the bash, tmux, and vim config files will be installed, backing up your old ones to *_old in the working directory.
+Coming soon. Going to write a simple script to use these via symlink. It's far cleaner than actually moving physical files to your dotfile locations, and it'll allow a lot more flexibility for testing out other people's configs.
 
 ## TODO
 - ~~Slowly add other stuff like i3gaps and full nvim/vim (with plugins) configs~~
@@ -14,7 +11,6 @@ Run `install.sh` and the bash, tmux, and vim config files will be installed, bac
 - ~~Write about bitmap fonts & using them on Ubuntu~~
 - Update README with list of files
 - ~~Rewrite installation scripts~~
-- Create Terraform & Ansible manifest(s)
 
 ## HomeBrew
 ### What is Brew?
