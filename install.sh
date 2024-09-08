@@ -20,28 +20,28 @@ if [ -f ~/.tmux.conf ];
 	then	
 		echo "tmux.conf exists, backing up to tmux_conf_old"
 		cp ~/.tmux.conf tmux_conf_old 
-	    	cp tmux.conf ~/.tmux.conf
+	    	cp shell/tmux.conf ~/.tmux.conf
 fi
 echo "no current tmux.conf in home dir, copying..."
 echo "please note this only checks home, if your tmux.conf is somewhere else please install manually"
-cp tmux.conf ~/.tmux.conf
+cp shell/.tmux.conf ~/.tmux.conf
 
 #bash
 echo "Backing up ~/.bashrc to bashrc_old..."
 cp ~/.bashrc bashrc_old
 
 echo "Copying new bashrc..."
-cp bashrc ~/.bashrc
+cp shell/.bashrc ~/.bashrc
 
 #vim
 if [ -f ~/.vimrc ];
 	then 
 	    	echo "vimrc exists, backing it up to vimrc_old..."
 	     	cp ~/.vimrc vimrc_old
-	      	cp vimrc ~/.vimrc
+	      	cp editor/.vimrc ~/.vimrc
 fi
 echo "no current vimrc, copying..."
-cp vimrc ~/.vimrc
+cp editor/.vimrc ~/.vimrc
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c ':PluginInstall' -c 'q' -c ':q'
@@ -67,13 +67,13 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 #Xresources
 echo "Creating Xresources configuration file..."
-cp Xresources ~/.Xresources
+cp gui/.Xresources ~/.Xresources
 
 #xbindkeys
 echo "Installing xbindkeys..."
 sudo apt install xbindkeys
 echo "Creating xbindkeys configuration file..."
-cp xbindkeysrc ~/.xbindkeysrc
+cp gui/.xbindkeysrc ~/.xbindkeysrc
 
 #dmenu
 echo "Installing dmenu..."
